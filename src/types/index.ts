@@ -14,3 +14,36 @@ export interface IContacts {
     phone: string;
 }
 
+export interface IBasket {
+    items: string[];
+    total: number;
+}
+
+export interface IOrder extends IContacts {
+    items: string[];
+    total: number;
+}
+
+export interface IPage {
+    products: HTMLElement[];
+    counter: number;
+}
+
+export interface IProductCatalog {
+    items: IProduct[];
+}
+
+export interface ICard {
+    id: string;
+    category: string;
+    title: string;
+    description: string;
+    image: string;
+    price: number;
+    index: number;
+}
+
+export interface IOrderAnswer {
+    id: string;
+    total: number;
+}
