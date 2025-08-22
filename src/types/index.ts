@@ -9,13 +9,13 @@ export interface IProduct {
 
 export interface IContacts {
     payment: string;
-    adress: string;
+    address: string;
     email: string;
     phone: string;
 }
 
 export interface IBasket {
-    items: string[];
+    items: HTMLElement[];
     total: number;
 }
 
@@ -29,7 +29,7 @@ export interface IPage {
     counter: number;
 }
 
-export interface IProductCatalog {
+export interface IProductsCatalog {
     items: IProduct[];
 }
 
@@ -47,3 +47,9 @@ export interface IOrderAnswer {
     id: string;
     total: number;
 }
+
+export type TPaymentForm = Pick<IOrder, 'payment' | 'address'>;
+export type TContactsForm = Pick<IOrder, 'email' | 'phone'>;
+export type TForm = TPaymentForm & TContactsForm;
+export type FormErrors = Partial<Record<keyof TForm, string>>;
+export type TSuccess = Pick<IBasket, 'total'>;
